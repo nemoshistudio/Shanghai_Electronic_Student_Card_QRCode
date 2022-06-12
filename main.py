@@ -11,14 +11,16 @@ print('--------------------------------------------')
 
 #获取个人信息
 print('请正确填写自己的个人信息')
-name = input('姓名： ')
-sex = input('性别（男/女）： ')
-studentid = input('学生证号： ')
-personalid = input('身份证号： ')
+print()
+name = input('1.姓名： ')
+sex = input('2.性别（男/女）： ')
+studentid = input('3.学生证号： ')
+personalid = input('4.身份证号： ')
 
 #确认信息
 print('--------------------------------------------')
 print('请确认各项个人信息')
+print()
 print('1.姓名：   ' + name)
 print('2.性别：   ' + sex)
 print('3.学生证号：' + studentid)
@@ -68,4 +70,3 @@ print('二维码已保存至当前目录下')
 print()
 print('按回车退出')
 exit = input()
-
