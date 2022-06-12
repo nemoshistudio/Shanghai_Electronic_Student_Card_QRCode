@@ -27,7 +27,7 @@ print('3.学生证号：' + studentid)
 print('4.身份证号：' + personalid)
 print('--------------------------------------------')
 
-verify = input('如有错误，请输入错误项编号；如无错误，请输入 y ')
+verify = input('如有错误，请输入错误项编号；如无错误，请输入 y ：')
 
 while not verify == 'y':
 
@@ -51,7 +51,7 @@ while not verify == 'y':
     print('4.身份证号：' + personalid)
     print()
 
-    verify = input('如有错误，请输入错误项编号；如无错误，请输入 y ')
+    verify = input('如有错误，请输入错误项编号；如无错误，请输入 y ：')
 #合并信息
 num = name + '/' + sex +'/' + studentid +'/' + personalid
 
@@ -68,5 +68,8 @@ img.save( name +' 的 电子学生证二维码.jpg')
 print('--------------------------------------------')
 print('二维码已保存至当前目录下')
 print()
-print('按回车退出')
+print('输入 e 退出 ；'
+      '输入 v 访问 Github 源代码仓库')
 exit = input()
+if exit == 'v':
+    webbrowser.open('https://github.com/nemoshistudio/Shanghai_Electronic_Student_Card_QRCode')
