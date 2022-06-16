@@ -55,32 +55,20 @@ while not verify == 'y':
     print()
 
     verify = input('如有错误，请输入错误项编号；如无错误，请输入 y ：')
-#合并信息
-studentidlist = list(str(studentid))
-personalidlist = list(str(personalid))
+
+#编码信息/字符串转字节
 slash = bytes('/',encoding='utf8')
-studentid = ''
-personalid = ''
-i = 0
-while i < 19:
-    studentid = studentid + studentidlist[i]
-    i = i + 1
-
-i = 0
-while i < 18:
-    personalid = personalid + personalidlist[i]
-    i = i +1
-
-print(studentid,personalid)
+namecache = name #文件名身份备份
+name = bytes(name,encoding='utf8')
+sex = bytes(sex,encoding='utf8')
 studentid = bytes(studentid,encoding='utf8')
 personalid = bytes(personalid,encoding='utf8')
-print(studentid,personalid)
 
-sum = bytes(name,encoding='utf8') + slash + bytes(sex,encoding='utf8') + slash + studentid + slash + personalid
+#合并信息
+sum = name + slash + sex + slash + studentid + slash + personalid
 
-#num = bytes(sum, encoding='utf-8')
-num = b'\xef\xbb\xbf'+sum
-print(num)
+#加入UTF-8 头部 BOM
+num = b'\xef\xbb\xbf' + sum
 
 #生成二维码
 #设置二维码规格
@@ -91,9 +79,11 @@ qr = qrcode.QRCode(version = 4,
 #生成二维码
 qr.add_data(num)
 img = qr.make_image()
-img.save( name +' 的 电子学生证二维码.jpg')
+namecache = namecache +' 的 电子学生证二维码.jpg'
+img.save(namecache)
 print('--------------------------------------------')
 print('二维码已保存至当前目录下')
+print('文件名为：' + namecache)
 print()
 print('输入 e 退出 ；'
       '输入 v 访问 Github 源代码仓库')
