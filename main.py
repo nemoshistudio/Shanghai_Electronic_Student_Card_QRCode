@@ -58,17 +58,17 @@ while not verify == 'y':
 #合并信息
 studentidlist = list(str(studentid))
 personalidlist = list(str(personalid))
-slash = b'\x2f'
+slash = bytes('/',encoding='utf8')
 studentid = ''
 personalid = ''
 i = 0
 while i < 19:
-    studentid = studentid + '\\x3' + studentidlist[i]
+    studentid = studentid + studentidlist[i]
     i = i + 1
 
 i = 0
 while i < 18:
-    personalid = personalid + '\\x3' + personalidlist[i]
+    personalid = personalid + personalidlist[i]
     i = i +1
 
 print(studentid,personalid)
