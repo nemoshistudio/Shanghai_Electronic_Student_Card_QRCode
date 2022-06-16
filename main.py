@@ -35,19 +35,19 @@ verify = input('如有错误，请输入错误项编号；如无错误，请输�
 while not verify == 'y':
 
     if verify == '1':
-        name = input('姓名')
+        name = input('姓名：')
 
     if verify == '2':
-        sex = input('性别（男/女）')
+        sex = input('性别（男/女）：')
 
     if verify == '3':
-        studentid = input('学生证号')
+        studentid = input('学生证号：')
 
     if verify == '4':
-        personalid = input('身份证号')
+        personalid = input('身份证号：')
 
     print('--------------------------------------------')
-    print('请再次确认各项个人信息')
+    print('请再次确认各项个人信息：')
     print('1.姓名：   ' + name)
     print('2.性别：   ' + sex)
     print('3.学生证号：' + studentid)
