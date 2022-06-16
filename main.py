@@ -1,7 +1,10 @@
 #By 西位nemo
 #电子学生证二维码生成py版
 
+import webbrowser
 import qrcode
+import codecs
+
 
 print('上海市电子学生证二维码生成器')
 print()
@@ -53,7 +56,31 @@ while not verify == 'y':
 
     verify = input('如有错误，请输入错误项编号；如无错误，请输入 y ：')
 #合并信息
-num = name + '/' + sex +'/' + studentid +'/' + personalid
+studentidlist = list(str(studentid))
+personalidlist = list(str(personalid))
+slash = b'\x2f'
+studentid = ''
+personalid = ''
+i = 0
+while i < 19:
+    studentid = studentid + '\\x3' + studentidlist[i]
+    i = i + 1
+
+i = 0
+while i < 18:
+    personalid = personalid + '\\x3' + personalidlist[i]
+    i = i +1
+
+print(studentid,personalid)
+studentid = bytes(studentid,encoding='utf8')
+personalid = bytes(personalid,encoding='utf8')
+print(studentid,personalid)
+
+sum = bytes(name,encoding='utf8') + slash + bytes(sex,encoding='utf8') + slash + studentid + slash + personalid
+
+#num = bytes(sum, encoding='utf-8')
+num = b'\xef\xbb\xbf'+sum
+print(num)
 
 #生成二维码
 #设置二维码规格
