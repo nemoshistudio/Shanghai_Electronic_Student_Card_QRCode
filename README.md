@@ -3,6 +3,14 @@
 
 下载页面：https://github.com/nemoshistudio/Shanghai_Electronic_Student_Card_QRCode/releases
 
+v2.0版本 更新内容：
+
+
+1.Fix some bugs
+
+
+2.加入了通过识别 实体电子学生证二维码 生成新二维码的功能
+
 
 本项目已经进入投放环节
 
