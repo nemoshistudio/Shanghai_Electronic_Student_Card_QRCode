@@ -154,6 +154,7 @@ if mode == '3':
         except Exception as e:
             pass
         if text:
+            cv2.destroyAllWindows()
             print('--------------------------------------------')
             print(text)
             print('--------------------------------------------')
