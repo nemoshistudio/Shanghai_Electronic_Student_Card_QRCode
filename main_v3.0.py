@@ -98,14 +98,16 @@ if mode == '2':
 
     img = Image.open(Filepath)
     barcodes = pyzbar.decode(img)
-    print('--------------------------------------------')
 
     for barcode in barcodes:
         barcode_content = barcode.data.decode('utf-8')  # 二维码内容
-        print(barcode_content)
+
 
     print('--------------------------------------------')
-    print('姓名/性别/学籍号/身份证号')
+    print('姓名：' + barcode_content[0:3])
+    print('性别：' + barcode_content[4:5])
+    print('学籍号：' + barcode_content[6:25])
+    print('身份证号：' + barcode_content[26:44])
     print('--------------------------------------------')
     verify = input('请确认以上信息是否正确,正确请输入 y，错误请输入 n\n')
     print('--------------------------------------------')
@@ -125,10 +127,13 @@ if mode == '2':
 
         for barcode in barcodes:
             barcode_content = barcode.data.decode('utf-8')  # 二维码内容
-            print(barcode_content)
+
 
         print('--------------------------------------------')
-        print('姓名/性别/学籍号/身份证号')
+        print('姓名：' + barcode_content[0:3])
+        print('性别：' + barcode_content[4:5])
+        print('学籍号：' + barcode_content[6:25])
+        print('身份证号：' + barcode_content[26:44])
         print('--------------------------------------------')
         verify = input('请再次确认以上信息是否正确,正确请输入 y，错误请输入 n\n')
 
@@ -155,10 +160,12 @@ if mode == '3':
             pass
         if text:
             cv2.destroyAllWindows()
+
             print('--------------------------------------------')
-            print(text)
-            print('--------------------------------------------')
-            print('姓名/性别/学籍号/身份证号')
+            print('姓名：' + text[0:3])
+            print('性别：' + text[4:5])
+            print('学籍号：' + text[6:25])
+            print('身份证号：' + text[26:44])
             print('--------------------------------------------')
             verify = input('请确认以上信息是否正确,正确请输入 y，错误请输入 n\n')
             print('--------------------------------------------')
