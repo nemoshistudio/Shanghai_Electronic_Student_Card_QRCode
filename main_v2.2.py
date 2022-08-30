@@ -157,10 +157,20 @@ qr = qrcode.QRCode(version = 4,
 qr.add_data(num)
 img = qr.make_image()
 namecache = namecache +' 的 电子学生证二维码.jpg'
-img.save(namecache)
+
+print('请选择保存路径')
+print()
+
+#调出窗口获取保存路径
+root = tk.Tk()
+root.withdraw()
+Folderpath = filedialog.askdirectory()
+print()
+    
+img.save(Folderpath + '/' + namecache)
 
 print()
-print('二维码已保存至当前目录下')
+print('二维码已保存至' + Folderpath + '/')
 print()
 print('文件名为：' + namecache)
 print()
