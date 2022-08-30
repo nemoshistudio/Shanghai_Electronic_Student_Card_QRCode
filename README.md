@@ -1,5 +1,5 @@
 # Shanghai_Electronic_Student_Card_QRCode
-上海电子学生证二维码生成器  暂只支持64位系统
+上海电子学生证二维码生成器  仅支持64位系统
 
 下载页面：https://github.com/nemoshistudio/Shanghai_Electronic_Student_Card_QRCode/releases
 
