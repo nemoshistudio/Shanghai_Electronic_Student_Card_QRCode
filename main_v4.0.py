@@ -33,7 +33,6 @@ class GUI():
         personalid = ""
         barcode_content = name + "/" + sex + "/" + studentid + "/" + personalid
 
-
         #定义窗口
         self.init_window_name.title("学生证二维码生成器")  # 窗口名称
         self.init_window_name.geometry('650x900+100+100')  # 分辨率
@@ -145,23 +144,19 @@ class GUI():
         for barcode in barcodes:
             barcode_content = barcode.data.decode('utf-8')  # 二维码内容
 
-        if barcode_content[2] == '/':
-            name = barcode_content[0:2]
-            sex = barcode_content[3:4]
-            studentid = barcode_content[5:24]
-            personalid = barcode_content[25:43]
+                if barcode_content[2] == '/':
+            namenum = 2
 
         if barcode_content[3] == '/':
-            name = barcode_content[0:3]
-            sex = barcode_content[4:5]
-            studentid = barcode_content[6:25]
-            personalid = barcode_content[26:44]
+            namenum =3
 
         if barcode_content[4] == '/' and not barcode_content[2] == '/':
-            name = barcode_content[0:4]
-            sex = barcode_content[5:6]
-            studentid = barcode_content[7:26]
-            personalid = barcode_content[27:45]
+            namenum = 4
+
+        name = barcode_content[0 : namenum]
+        sex = barcode_content[namenum + 1 : namenum + 2]
+        studentid = barcode_content[namenum + 3 : namenum + 22]
+        personalid = barcode_content[namenum + 23 : namenum + 41]
 
         src = self.name_text.get(1.0, END).strip().replace("\n", "").encode()
         self.name_text.delete(1.0, END)
