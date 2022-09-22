@@ -8,6 +8,7 @@
 重大更新！！！
 
 v4.0版本更新内容：
+![d75c3e46fef6da4ba2ccaa62402ffd6](https://user-images.githubusercontent.com/103271367/191792686-46c3b05c-324a-41f6-b9cf-b332b2a6e445.jpg)
 
 1.第一次加入了 GUI 界面 ，可以通过图形化界面使用了本工具了！！！！！！！！
 
